@@ -1,4 +1,3 @@
-// src/course/course.service.ts
 import {
   Injectable,
   ForbiddenException,

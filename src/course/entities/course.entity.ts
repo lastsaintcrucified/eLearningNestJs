@@ -1,6 +1,12 @@
-// src/course/entities/course.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
 import { User } from 'src/user/entities/user.entity';
+import { Modules } from 'src/module/entities/module.entity';
 
 @Entity()
 export class Course {
@@ -18,4 +24,7 @@ export class Course {
 
   @ManyToOne(() => User, (user) => user.courses)
   instructor: User;
+
+  @OneToMany(() => Modules, (module) => module.course)
+  modules: Modules[];
 }

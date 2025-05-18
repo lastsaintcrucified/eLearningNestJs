@@ -7,6 +7,8 @@ import { CourseModule } from './course/course.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './common/guards/roles/roles.guard';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
+import { ModuleModule } from './module/module.module';
+import { LessonModule } from './lesson/lesson.module';
 console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be undefined
 
 @Module({
@@ -21,6 +23,8 @@ console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be 
     UserModule,
     AuthModule,
     CourseModule,
+    ModuleModule,
+    LessonModule,
   ],
   providers: [
     {
