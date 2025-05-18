@@ -9,6 +9,7 @@ import { RolesGuard } from './common/guards/roles/roles.guard';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { ModuleModule } from './module/module.module';
 import { LessonModule } from './lesson/lesson.module';
+import { EnrollmentModule } from './enrollment/enrollment.module';
 console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be undefined
 
 @Module({
@@ -25,6 +26,7 @@ console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be 
     CourseModule,
     ModuleModule,
     LessonModule,
+    EnrollmentModule,
   ],
   providers: [
     {

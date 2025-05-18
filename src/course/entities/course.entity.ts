@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { Modules } from 'src/module/entities/module.entity';
+import { Enrollment } from 'src/enrollment/entities/enrollment.entity';
 
 @Entity()
 export class Course {
@@ -27,4 +28,7 @@ export class Course {
 
   @OneToMany(() => Modules, (module) => module.course)
   modules: Modules[];
+
+  @OneToMany(() => Enrollment, (enrollment) => enrollment.course)
+  enrollments: Enrollment[];
 }
