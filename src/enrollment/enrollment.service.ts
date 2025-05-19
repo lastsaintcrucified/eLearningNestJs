@@ -31,7 +31,7 @@ export class EnrollmentService {
   async findUserEnrollments(userId: number) {
     return this.repo.find({
       where: { user: { id: userId } },
-      relations: ['course'],
+      relations: ['course', 'course.instructor', 'user'],
     });
   }
 }
