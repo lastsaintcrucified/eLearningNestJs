@@ -13,6 +13,7 @@ export class EnrollmentController {
     return this.service.enroll(req.user.id, body.courseId);
   }
 
+  @Role('student')
   @Get('me')
   myEnrollments(@Request() req) {
     return this.service.findUserEnrollments(req.user.id);
