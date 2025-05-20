@@ -22,7 +22,7 @@ console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be 
       extra: {
         family: 4, // 👈 Forces IPv4
       },
-      synchronize: true, // true for dev only
+      synchronize: process.env.PORT ? false : true, // true for dev only
     }),
     UserModule,
     AuthModule,
