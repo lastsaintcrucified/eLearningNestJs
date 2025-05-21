@@ -40,6 +40,11 @@ export class LessonService {
     });
   }
 
+  async findByLessonId(id: number) {
+    return this.lessonRepo.find({
+      where: { id },
+    });
+  }
   async update(id: number, data: UpdateLessonDto) {
     await this.lessonRepo.update(id, data);
     return this.lessonRepo.findOne({ where: { id } });

@@ -25,13 +25,13 @@ export class CourseService {
   }
 
   findAll() {
-    return this.courseRepo.find({ relations: ['instructor'] });
+    return this.courseRepo.find({ relations: ['instructor', 'modules'] });
   }
 
   findOne(id: number) {
     return this.courseRepo.findOne({
       where: { id },
-      relations: ['instructor'],
+      relations: ['instructor', 'modules', 'modules.lessons'],
     });
   }
 

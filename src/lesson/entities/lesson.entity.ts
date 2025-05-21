@@ -13,6 +13,12 @@ export class Lesson {
   @Column('text')
   content: string;
 
+  @Column({ default: false })
+  completed: boolean;
+
+  @Column({ default: '2h' })
+  duration: string;
+
   @Column({ nullable: true })
   videoUrl: string;
 

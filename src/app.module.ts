@@ -19,9 +19,9 @@ console.log('JWT_SECRET from app:', process.env.DATABASE_URL); // should not be 
       type: 'postgres',
       url: process.env.DATABASE_URL,
       autoLoadEntities: true,
-      extra: {
-        family: 4, // 👈 Forces IPv4
-      },
+      // extra: {
+      //   family: 4, // 👈 Forces IPv4
+      // },
       synchronize: true, // true for dev only
     }),
     UserModule,

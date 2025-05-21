@@ -32,6 +32,11 @@ export class LessonController {
     return this.lessonService.findByModule(+moduleId);
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.lessonService.findByLessonId(+id);
+  }
+
   @Role('instructor')
   @Patch(':lessonId')
   update(@Param('lessonId') id: string, @Body() body: UpdateLessonDto) {
